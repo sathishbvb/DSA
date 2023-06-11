@@ -1,6 +1,6 @@
-package com.sathish.ds;
+package com.sathish.ds.Tree;
 
-public class Main {
+public class TreeDataStructure {
 
     public static class Node{
         int val;
