@@ -43,8 +43,16 @@ public class TreeBasic {
         Node rightChild = new Node(30);
         root.setLeftChild(leftChild);
         root.setRightChild(rightChild);
+        Node root1 = new Node(107);
+        Node root2 = new Node(108);
+        leftChild.setLeftChild(root1);
+        leftChild.getLeftChild().setLeftChild(root2);
         //preOrderTraversal(root);
-        inorderTraversal(root);
+       // inorderTraversal(root);
+        //System.out.println(heightOfATree(root));
+        //inorderTraversalRecursion(root);
+        printNodeAwayFromKNode(root,3);
+
     }
 
     public static void preOrderTraversal(Node root) {
@@ -67,22 +75,48 @@ public class TreeBasic {
     public static void inorderTraversal(Node root){
         Stack<Node> nodeStack = new Stack<>();
         nodeStack.push(root);
+        nodeStack.push(root.getRightChild());
         nodeStack.push(root.getLeftChild());
         while (!nodeStack.isEmpty()) {
             Node n = nodeStack.pop();
-                if (n.getLeftChild() != null)
-                    nodeStack.push(n.getLeftChild());
-                else{
-                    System.out.println(n.getKey());
-                    if(n.getRightChild()!=null){
-                        nodeStack.push(n.getRightChild());
-                    }
-                }
+            if (n.getRightChild() != null) {
+                nodeStack.push(n.getRightChild());
             }
+            System.out.println(n.getKey());
+            if (n.getLeftChild() != null) {
+                nodeStack.push(n.getLeftChild());
+            }
+        }
+}
+
+    public static void inorderTraversalRecursion(Node root){
+        if(root!=null){
+            inorderTraversalRecursion(root.getLeftChild());
+            System.out.println(root.getKey());
+            inorderTraversalRecursion(root.getRightChild());
+        }
     }
 
-    public void testfunction(){
-
+    public static int heightOfATree(Node root){
+        if(root==null){
+            return 0;
+        }
+            return(Math.max(heightOfATree(root.getLeftChild()),heightOfATree(root.getRightChild()))+1);
     }
+
+    public static void printNodeAwayFromKNode(Node root,int k){
+        if(root==null){
+            return;
+        }
+       if(k==0){
+           System.out.println(root.getKey());
+       }
+       else{
+           printNodeAwayFromKNode(root.getLeftChild(),k-1);
+           printNodeAwayFromKNode(root.getRightChild(),k-1);
+       }
+    }
+
+
 
 }
