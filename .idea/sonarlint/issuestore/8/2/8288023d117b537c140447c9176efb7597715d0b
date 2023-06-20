@@ -1,0 +1,27 @@
+
+[
+java:S2184"ECast one of the operands of this subtraction operation to a "double".(ßÒôÄ
+T
+java:S1659">Declare "b" and all following declarations on a separate line.(Íðùˆ
+<
+java:S1659"!Declare "ans" on a separate line.(à—£»ýÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(ÒÁìÅ
+Q	java:S125"<This block of commented-out lines of code should be removed.(ÒÁìÅ
+Q	java:S125"<This block of commented-out lines of code should be removed.(ÒÁìÅ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(ü„ê!
+7
+java:S1659""!Declare "rev" on a separate line.(±îÌ‰
+A
+java:S1481#"&Remove this unused "s" local variable.(®þîìøÿÿÿÿ
+W
+java:S1126("AReplace this if-then-else statement by a single return statement.(ÊŒ”ö
+N	java:S106X"9Replace this use of System.out or System.err by a logger.(†™ñ‹
+M	java:S106["9Replace this use of System.out or System.err by a logger.(€Ë²:
+S	java:S106_"9Replace this use of System.out or System.err by a logger.(Ç‚þ©ÿÿÿÿÿ
+S	java:S106e"9Replace this use of System.out or System.err by a logger.(´‹¹öþÿÿÿÿ
+N	java:S106i"9Replace this use of System.out or System.err by a logger.(É¾…‹
+N	java:S106m"9Replace this use of System.out or System.err by a logger.(†™ñ‹
+S	java:S106s"9Replace this use of System.out or System.err by a logger.(´‹¹öþÿÿÿÿ
+S	java:S106z"9Replace this use of System.out or System.err by a logger.(ìÑÑÈÿÿÿÿÿ
+T	java:S106"9Replace this use of System.out or System.err by a logger.(Ìð¡»ùÿÿÿÿ
+T	java:S106‡"9Replace this use of System.out or System.err by a logger.(¼îû¼ýÿÿÿÿ
