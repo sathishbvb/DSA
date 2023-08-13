@@ -4,12 +4,15 @@ package com.sathish.ds.Arrays;
 
 public class Arrays {
     public static void main(String[] args) {
-        int[] noArray = {50,124,54,45,60};
+        int[] noArray = {10,20,20,20,30,30};
         //System.out.println(findLargestEleIndexInArr(noArray));
         //deleteEleFromArray(noArray,10);
         //printSecLarEleArrIdx(noArray);
         //checkIfArraySorted(noArray);
-        reverseAnArray(noArray);
+        //reverseAnArray(noArray);
+        //removeDuplicatesFromSorArr(noArray);
+        //removeDuplicatesFromSorArr1(noArray);
+        moveZerosToEnd();
     }
 
     /**
@@ -90,6 +93,48 @@ public class Arrays {
             j--;
         }
         System.out.println(i);
+        System.out.println(java.util.Arrays.toString(noArray));
+    }
+
+    public static void removeDuplicatesFromSorArr(int[] noArray1){
+        int[] noArray = {10,20,30,40};
+        int len=noArray.length;
+        for (int i=0;i<noArray.length-1;i++){
+            if(noArray[i]==noArray[i+1]){
+               while(i+1<noArray.length){
+                   if(noArray[i]!=noArray[i+1]){
+                       break;
+                   }
+                   i++;
+                   --len;
+               }
+            }
+        }
+        System.out.println(len);
+    }
+    public static void removeDuplicatesFromSorArr1(int[] noArray1){
+        int[] noArray = {10,10,30,40};
+        int res =1;
+        for (int i=1;i<noArray.length;i++){
+            if(noArray[i]!=noArray[res-1]){
+                noArray[res]=noArray[i];
+                res++;
+            }
+        }
+        System.out.println(java.util.Arrays.toString(noArray));
+    }
+
+    public static void moveZerosToEnd(){
+        int[] noArray = {0,8,0,10,0,0};
+        int res=0;
+        for(int i=0;i<noArray.length-1;i++){
+            if(noArray[i]!=0){
+                int temp = noArray[res];
+                noArray[res]=noArray[i];
+                noArray[i]=temp;
+                res++;
+            }
+        }
         System.out.println(java.util.Arrays.toString(noArray));
     }
 
