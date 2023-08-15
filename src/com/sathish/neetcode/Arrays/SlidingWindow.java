@@ -6,7 +6,8 @@ import java.util.HashSet;
 public class SlidingWindow {
     public static void main(String[] args) {
         SlidingWindow sw = new SlidingWindow();
-        System.out.println(sw.lengthOfLongestSubstring("pwwkew"));
+//        System.out.println(sw.lengthOfLongestSubstring("pwwkew"));
+        System.out.println(sw.characterReplacement("ABABBA",1));
     }
 
     public int lengthOfLongestSubstring1(String s) {
@@ -54,5 +55,37 @@ public class SlidingWindow {
         }
         return max;
     }
+
+    //given a string and an int value ,replace at most int character in string to form a substring
+    //Return length of max substring
+
+    public int characterReplacement(String s, int k) {
+        char ch[] = s.toCharArray();
+        int i=0,j=0,res=0,max=0;
+        if(s.length()<k){
+            return 0;
+        }
+        HashMap<Character,Integer> map = new HashMap<>();
+        while(j<ch.length){
+                map.put(ch[j],(map.getOrDefault(ch[j],0))+1);
+            while((((j-i)+1)-getMaxValFromMap(map))>k){
+                map.put(ch[i],map.get(ch[i])-1);
+                i++;
+            }
+            res=Math.max(res,(j-i)+1);
+            j++;
+
+        }
+        return res;
+    }
+
+    private int getMaxValFromMap(HashMap<Character,Integer> map) {
+        int max=0;
+        for(char c : map.keySet()){
+            max=Math.max(max,map.get(c));
+        }
+        return max;
+    }
+
 
 }
